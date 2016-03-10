@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesEConstrutores", "Cla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colecoes", "Colecoes\Colecoes.csproj", "{E1D22A15-ADAD-422D-AC18-2C71DFE3F48E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Introducao CSharp", "Introducao CSharp", "{0DDE3008-C705-4EAC-8A40-C8E5E5BCB3E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BC78962D-C148-4933-977D-D4CE528908EC} = {0DDE3008-C705-4EAC-8A40-C8E5E5BCB3E2}
+		{E1D22A15-ADAD-422D-AC18-2C71DFE3F48E} = {0DDE3008-C705-4EAC-8A40-C8E5E5BCB3E2}
 	EndGlobalSection
 EndGlobal
