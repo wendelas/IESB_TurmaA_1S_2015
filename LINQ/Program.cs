@@ -14,6 +14,51 @@ namespace LINQ
         static void Main(string[] args)
         {
             CarregarJsons();
+
+            var filtroSimple1 = from f in funcionarios
+                                where f.Nome.StartsWith("A")
+                                select f;
+            //var filtroSimple = funcionarios
+            //    .Where((f) => f.Nome.StartsWith("A"));
+
+            foreach (var item in filtroSimple1)
+            {
+                Console.WriteLine($"{item.NomeCompleto}");
+            }
+
+            var filtroSimple2 = from f in funcionarios
+                                where f.Nome.StartsWith("A")
+                                select new
+                                {
+                                    Campo1 = f.Nome,
+                                    Campo2 = f.Sobrenome
+                                };
+            var filtroSimples2 = funcionarios
+                .Where((f) => f.Nome.StartsWith("A"))
+                .Select((f) => new
+                {
+                    Campo1 = f.Nome,
+                    Campo2 = f.Sobrenome
+                });
+            foreach (var item in filtroSimple2)
+                Console.WriteLine($"{item.Campo1} {item.Campo2}");
+
+
+            var filtro3 = (from f in funcionarios
+                          group f by
+                          f.Nome.First().ToString() into g
+                          select new
+                          {
+                              Chave = g.Key,
+                              Quantidade = g.Count()
+                          }).OrderBy( g => g.Quantidade);
+            foreach (var item in filtro3)
+            {
+                Console
+                    .WriteLine($"{item.Chave} - {item.Quantidade}");
+            }
+
+            Console.ReadLine();
         }
 
         private static void CarregarJsons()
